@@ -16,9 +16,7 @@
 	:root {
 		--index-page-container-max-width: 1132px;
 	}
-</style>
 
-<style lang="scss" scoped>
 	.index-page {
 		@include reset;
 
@@ -27,11 +25,13 @@
 		min-height: 100vh;
 		background-image: linear-gradient(135deg, #6039aa 0%, #32d6bd 100%);
 
-		/deep/ .container {
+		.container {
 			max-width: var(--index-page-container-max-width);
 		}
 	}
+</style>
 
+<style lang="scss" scoped>
 	.header {
 		padding: 0.5rem 0;
 		height: 60px;
