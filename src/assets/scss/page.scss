@@ -1,0 +1,17 @@
+:root {
+	--page-background-color: white;
+}
+
+.page {
+	@include reset;
+
+	min-width: 320px;
+	overflow-x: hidden;
+
+	&__body {
+		@include reset;
+
+		overflow-x: hidden;
+		background-color: var(--page-background-color);
+	}
+}

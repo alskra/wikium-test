@@ -1,0 +1,37 @@
+// Mobile first
+@custom-media --gte-sm (width >= env(--sm));
+@custom-media --gte-md (width >= env(--md));
+@custom-media --gte-lg (width >= env(--lg));
+@custom-media --gte-xl (width >= env(--xl));
+
+// Desktop first
+@custom-media --lt-xl (width < env(--xl));
+@custom-media --lt-lg (width < env(--lg));
+@custom-media --lt-md (width < env(--md));
+@custom-media --lt-sm (width < env(--sm));
+
+// Spacing
+$spacer: 1rem;
+
+$spacers: (
+	0: 0,
+	1: $spacer * 1,
+	2: $spacer * 2,
+	3: $spacer * 3,
+	4: $spacer * 4,
+	5: $spacer * 5
+);
+
+// Grid
+$grid-breakpoints: (
+	xs: env(--xs),
+	sm: env(--sm),
+	md: env(--md),
+	lg: env(--lg),
+	xl: env(--xl)
+);
+
+$container-max-widths: (
+);
+
+$grid-gutter-width: 2rem;

@@ -1,0 +1,19 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+:focus:not(:focus-visible) {
+	outline: none;
+}
+
+:focus-visible {
+	outline: 1px dotted currentColor;
+	outline: 5px auto -webkit-focus-ring-color;
+}
+
+::selection {
+	color: var(--page-background-color);
+	background: var(--content-color);
+}

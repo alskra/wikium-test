@@ -1,0 +1,26 @@
+doctype html
+html.page(lang="ru")
+	head
+		block meta
+			meta(name="robots" content="noindex, nofollow")
+			meta(charset="utf-8")
+			meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+
+		base(href=BASE_URL)
+
+		block links
+			link(rel="icon" href="favicon.ico")
+
+		title=htmlWebpackPlugin.options.title
+
+		block head-scripts
+	body.page__body
+		noscript
+			strong We're sorry but wikium-test doesn't work properly without JavaScript enabled. Please enable it to continue.
+
+		#app
+			block app
+
+		block scripts
+		//- built files will be auto injected
+
