@@ -3,20 +3,21 @@ extends ../pug/base
 block app
 	index-page(inline-template)
 		div.index-page
-			header.header
-				.container
-					a.logo(href="/")
-						img.__img(
-							src="img/logo@2x.svg"
-							alt="Викиум"
-						)
-
-			main.main
-				section.pay-section
+			template
+				header.header
 					.__container.container
-						.__row.row
-							.__content-col.col
-								h1.__title Три дня для твоего мозга.
-								p.__desc Это стоит символические #[strong 60 рублей], для того, чтобы была мотивация пройти этот путь до конца
+						a.logo(href="/")
+							img.__img(
+								src="img/logo@2x.svg"
+								alt="Викиум"
+							)
 
-							.__form-col.col-auto
+				main.main
+					section.pay-section
+						.__container.container
+							.__row.row
+								.__content-col.col
+									h1.__title Три дня для твоего мозга.
+									p.__desc Это стоит символические #[strong 60 рублей], для того, чтобы была мотивация пройти этот путь до конца
+
+								.__form-col.col-auto

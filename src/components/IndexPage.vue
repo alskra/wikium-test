@@ -33,7 +33,14 @@
 	}
 
 	.header {
-		padding: 1rem 0;
+		padding: 0.5rem 0;
+		height: 60px;
+
+		&__container {
+			display: flex;
+			height: 100%;
+			align-items: center;
+		}
 	}
 
 	.logo {
