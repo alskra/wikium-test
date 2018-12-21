@@ -39,7 +39,7 @@
 						)
 
 			.__back
-				.__field-row
+				.__field-row.--cvc
 					.__field-col.--cvc
 						label.__field-label(for="cvc") cvc
 
@@ -51,7 +51,7 @@
 							autocomplete="off"
 						)
 
-						.__field-desc Три цифры с&nbsp;оборотной стороны
+					.__field-desc.--cvc Три цифры с&nbsp;оборотной стороны
 </template>
 
 <script>
@@ -126,6 +126,8 @@
 			background-color: #e7e6f4;
 
 			@media (width < env(--tablet)) {
+				display: flex;
+				flex-flow: column;
 				padding-left: 14px;
 				padding-right: 14px;
 			}
@@ -138,7 +140,7 @@
 				background-color: #b49ed6;
 
 				@media (width < env(--tablet)) {
-					margin: 0 -15px 70px;
+					margin: 0 -15px auto;
 				}
 			}
 
@@ -162,6 +164,19 @@
 				&:not(:last-child) {
 					margin-bottom: 20px;
 				}
+
+				&--cvc {
+					margin-left: auto;
+					width: 112px;
+					flex-flow: column;
+
+					@media (width < env(--tablet)) {
+						margin-left: -8px;
+						width: auto;
+						flex-flow: row;
+						align-items: center;
+					}
+				}
 			}
 
 			&-col {
@@ -171,23 +186,15 @@
 				flex-grow: 1;
 
 				&--expiry {
-					flex: 0 0 116px;
+					width: 116px;
+					flex: 0 0 auto;
 				}
 
 				&--cvc {
-					margin-left: auto;
-					flex: 0 0 112px;
-
 					@media (width < env(--tablet)) {
-						position: relative;
-						margin-left: 0;
-
-						.card__field-desc {
-							position: absolute;
-							bottom: 0;
-							left: 100%;
-							margin: 0 0 0 8px;
-						}
+						width: 112px;
+						flex: 0 0 auto;
+						align-self: flex-end;
 					}
 				}
 			}
@@ -236,12 +243,20 @@
 			}
 
 			&-desc {
-				margin-top: 6px;
 				color: #999999;
 				font-family: var(--content-font-family);
 				font-size: 12px;
 				line-height: 1.25;
 				user-select: none;
+
+				&--cvc {
+					margin-top: 6px;
+					padding: 0 8px;
+
+					@media (width < env(--tablet)) {
+						margin-top: 20px;
+					}
+				}
 			}
 		}
 	}
