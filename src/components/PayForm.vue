@@ -7,6 +7,7 @@
 				.__field-row
 					.__field-col
 						label.__field-label(for="number") номер карты
+
 						input.__field-input(
 							id="number"
 							name="number"
@@ -16,8 +17,9 @@
 						)
 
 				.__field-row
-					.__field-col.--owner
+					.__field-col
 						label.__field-label(for="owner") имя владельца
+
 						input.__field-input(
 							id="owner"
 							name="owner"
@@ -27,6 +29,7 @@
 
 					.__field-col.--expiry
 						label.__field-label(for="expiry") срок действия
+
 						input.__field-input(
 							id="expiry"
 							name="expiry"
@@ -34,7 +37,21 @@
 							type="tel"
 							maxlength="7"
 						)
+
 			.__back
+				.__field-row
+					.__field-col.--cvc
+						label.__field-label(for="cvc") cvc
+
+						input.__field-input(
+							id="cvc"
+							name="cvc"
+							ref="cvc"
+							type="tel"
+							autocomplete="off"
+						)
+
+						.__field-desc Три цифры с&nbsp;оборотной стороны
 </template>
 
 <script>
@@ -48,6 +65,7 @@
 		mounted() {
 			payform.cardNumberInput(this.$refs.number);
 			payform.expiryInput(this.$refs.expiry);
+			payform.cvcInput(this.$refs.cvc);
 		}
 	}
 </script>
@@ -82,7 +100,7 @@
 		&__front {
 			position: relative;
 			z-index: 1;
-			padding: 13px 23px 29px;
+			padding: 14px 23px 29px;
 			width: 391px;
 			height: 233px;
 			max-width: 100%;
@@ -92,19 +110,37 @@
 			background-color: #f1f0f9;
 
 			@media (width < env(--tablet)) {
-				padding-left: 15px;
-				padding-right: 15px;
+				padding-left: 14px;
+				padding-right: 14px;
 			}
 		}
 
 		&__back {
 			margin: 36px 0 0 -391px;
+			padding: 23px 23px 29px;
 			width: 391px;
 			height: 233px;
 			max-width: 100%;
 			border-radius: 8px;
 			border: 1px solid #e6e6e6;
 			background-color: #e7e6f4;
+
+			@media (width < env(--tablet)) {
+				padding-left: 14px;
+				padding-right: 14px;
+			}
+
+			&::before {
+				content: '';
+				display: block;
+				margin: 0 -24px 10px;
+				height: 50px;
+				background-color: #b49ed6;
+
+				@media (width < env(--tablet)) {
+					margin: 0 -15px 70px;
+				}
+			}
 
 			@media (width < env(--tablet)) {
 				margin: -233px + 99px 0 0;
@@ -120,7 +156,7 @@
 
 		&__field {
 			&-row {
-				margin: 0 -7.5px;
+				margin: 0 -8px;
 				display: flex;
 
 				&:not(:last-child) {
@@ -129,13 +165,30 @@
 			}
 
 			&-col {
-				padding: 0 7.5px;
+				padding: 0 8px;
 				min-width: 0;
 				max-width: 100%;
 				flex-grow: 1;
 
 				&--expiry {
-					flex: 0 0 115px;
+					flex: 0 0 116px;
+				}
+
+				&--cvc {
+					margin-left: auto;
+					flex: 0 0 112px;
+
+					@media (width < env(--tablet)) {
+						position: relative;
+						margin-left: 0;
+
+						.card__field-desc {
+							position: absolute;
+							bottom: 0;
+							left: 100%;
+							margin: 0 0 0 8px;
+						}
+					}
 				}
 			}
 
@@ -180,6 +233,14 @@
 					outline: 0;
 					border-color: #b49ed6;
 				}
+			}
+
+			&-desc {
+				margin-top: 6px;
+				color: #999999;
+				font-family: var(--content-font-family);
+				font-size: 12px;
+				line-height: 1.25;
 			}
 		}
 	}
