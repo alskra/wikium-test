@@ -18,6 +18,7 @@
 
 		display: flex;
 		flex-flow: column;
+		padding-bottom: 60px;
 		min-height: 100vh;
 		background-image: linear-gradient(135deg, #6039aa 0%, #32d6bd 100%);
 	}
