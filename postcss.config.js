@@ -6,12 +6,8 @@ const sortCssMediaQueries = require('sort-css-media-queries');
 const postcssPxtorem = require('postcss-pxtorem');
 
 const environmentVariables = {
-	// Breakpoints
-	'--xs': '0',
-	'--sm': '640px',
-	'--md': '960px',
-	'--lg': '1280px',
-	'--xl': '1600px'
+	'--tablet': '768px',
+	'--desktop': '1132px'
 };
 
 module.exports = {

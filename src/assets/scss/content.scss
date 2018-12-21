@@ -1,6 +1,3 @@
-$content-font-size: 16;
-$content-headings-font-size: 34;
-
 @custom-selector :--headings
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6;
@@ -8,30 +5,25 @@ h1, h2, h3, h4, h5, h6,
 :root {
 	--content-font-family: "Open Sans", sans-serif;
 	--content-font-weight: 400;
-	--content-font-size: 16px;
+	--content-font-size: 14px;
 	--content-line-height: 1.5;
-	--content-color: #7c7c7c;
-	--content-link-color: #3cb371;
+	--content-color: #333333;
+	--content-link-color: #26aded;
 	--content-space: 1em;
 
 	// Headings
-	--content-headings-font-family: "Roboto", sans-serif;
+	--content-headings-font-family: "Open Sans", sans-serif;
 	--content-headings-font-weight: 700;
-	--content-headings-font-size: 34px;
+	--content-headings-font-size: 32px;
 	--content-headings-line-height: 1.25;
-	--content-headings-color: #0a0a0a;
+	--content-headings-color: #333333;
 
 	--content-h1-font-size: var(--content-headings-font-size);
-	--content-h2-font-size: calc(var(--content-headings-font-size) * 28 / 34);
-	--content-h3-font-size: calc(var(--content-headings-font-size) * 26 / 34);
-	--content-h4-font-size: calc(var(--content-headings-font-size) * 24 / 34);
-	--content-h5-font-size: calc(var(--content-headings-font-size) * 22 / 34);
-	--content-h6-font-size: calc(var(--content-headings-font-size) * 20 / 34);
-
-	@media (--lt-md) {
-		--content-font-size: 15px;
-		--content-headings-font-size: 28px;
-	}
+	--content-h2-font-size: calc(28 / 32 * var(--content-headings-font-size));
+	--content-h3-font-size: calc(24 / 32 * var(--content-headings-font-size));
+	--content-h4-font-size: calc(20 / 32 * var(--content-headings-font-size));
+	--content-h5-font-size: calc(16 / 32 * var(--content-headings-font-size));
+	--content-h6-font-size: calc(12 / 32 * var(--content-headings-font-size));
 }
 
 .content {

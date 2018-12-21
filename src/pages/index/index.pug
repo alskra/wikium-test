@@ -5,19 +5,19 @@ block app
 		div.index-page
 			template
 				header.header
-					.__container.container
-						a.logo(href="/")
-							img.__img(
-								src="img/logo@2x.svg"
+					.__container
+						a.__logo(href="/")
+							img.__logo-img(
+								src="img/logo.svg"
 								alt="Викиум"
 							)
 
 				main.main
 					section.pay-section
-						.__container.container
-							.__row.row
-								.__content-col.col
-									h1.__title Три дня для твоего мозга.
-									p.__desc Это стоит символические #[strong 60 рублей], для того, чтобы была мотивация пройти этот путь до конца
+						.__container
+							.__content-col
+								h1.__title Три дня для твоего мозга.
+								p.__desc Это стоит символические #[strong 60&nbsp;рублей], для&nbsp;того, чтобы была мотивация пройти этот путь до&nbsp;конца
 
-								.__form-col.col-auto
+							.__form-col
+								pay-form

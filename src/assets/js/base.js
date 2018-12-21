@@ -3,7 +3,6 @@ import '../scss/variables.scss';
 import '../scss/setup.scss';
 import 'normalize.css';
 import '../scss/fonts.scss';
-import '../scss/bootstrap.scss';
 import '../scss/page.scss';
 import '../scss/content.scss';
 
