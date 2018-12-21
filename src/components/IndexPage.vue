@@ -25,6 +25,7 @@
 	.header {
 		padding: 0.5rem 0;
 		height: 60px;
+		flex-shrink: 0;
 
 		&__container {
 			margin: 0 auto;
@@ -52,7 +53,14 @@
 		}
 	}
 
+	.main {
+		display: flex;
+		flex-flow: column;
+		flex-grow: 1;
+	}
+
 	.pay-section {
+		margin: auto 0;
 		padding: 60px 0;
 
 		@media (width < env(--desktop)) {

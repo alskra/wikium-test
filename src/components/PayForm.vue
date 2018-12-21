@@ -241,6 +241,7 @@
 				font-family: var(--content-font-family);
 				font-size: 12px;
 				line-height: 1.25;
+				user-select: none;
 			}
 		}
 	}
