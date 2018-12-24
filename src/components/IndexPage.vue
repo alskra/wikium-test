@@ -68,6 +68,10 @@
 			padding: 40px 0;
 		}
 
+		@media (width < env(--tablet)) {
+			padding: 30px 0;
+		}
+
 		&__container {
 			margin: 0 auto;
 			display: flex;
@@ -85,6 +89,10 @@
 			@media (width < env(--desktop)) {
 				padding-top: 0;
 				padding-bottom: 60px;
+			}
+
+			@media (width < env(--tablet)) {
+				padding-bottom: 40px;
 			}
 		}
 
@@ -109,6 +117,10 @@
 			font-size: 48px;
 			line-height: 1.25;
 			font-weight: 800;
+
+			@media (width < env(--tablet)) {
+				font-size: 24px;
+			}
 		}
 
 		&__desc {
@@ -118,6 +130,10 @@
 			font-family: var(--content-font-family);
 			font-size: 21px;
 			line-height: 1.25;
+
+			@media (width < env(--tablet)) {
+				font-size: 14px;
+			}
 		}
 	}
 </style>

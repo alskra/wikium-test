@@ -15,7 +15,7 @@
 						:class="{'card__type-item--active': typeItem.name === validObj.cardType}"
 						:title="typeItem.title"
 					)
-						base-icon.__type-item-img(
+						base-icon.__type-item-icon(
 							:name="typeItem.name"
 							:width="null"
 							:height="null"
@@ -87,10 +87,33 @@
 					.__field-desc.--cvc Три цифры с&nbsp;оборотной стороны
 
 		.footer
-			.__row
-				.__col
-				.__col
+			.__actions-row
+				.__info-col
+					.info
+						base-icon.__icon(
+							name="lock"
+							:width="null"
+							:height="null"
+						)
+						.__body.
+								Мы не&nbsp;храним ваши данные, а&nbsp;сразу
+								передаем их по&nbsp;зашифрованному
+								каналу платежной системе
+				.__button-col
+					button.btn-default(
+						type="submit"
+						:disabled="!checkValid()"
+					)
+						base-icon.__icon(
+							name="lock"
+							:width="null"
+							:height="null"
+						)
 
+						span.__label ОПЛАТИТЬ 60 ₽
+
+			.__other-row.content
+				a(href="/") Все способы оплаты
 </template>
 
 <script>
@@ -298,7 +321,7 @@
 			opacity: 0.5;
 			transition: opacity 0.15s ease-in-out;
 
-			&-img {
+			&-icon {
 				display: block;
 				width: auto;
 				height: 36px;
@@ -421,6 +444,121 @@
 					}
 				}
 			}
+		}
+	}
+
+	.footer {
+		margin-top: 30px;
+
+		&__actions-row {
+			display: flex;
+			align-items: center;
+			margin: 0 -1rem;
+		}
+
+		&__other-row {
+			margin-top: 30px;
+
+			@media (width < env(--tablet)) {
+				text-align: center;
+			}
+		}
+
+		&__info-col {
+			padding: 0 1rem;
+			min-width: 0;
+			max-width: 100%;
+			flex-grow: 1;
+
+			@media (width < env(--tablet)) {
+				display: none;
+			}
+		}
+
+		&__button-col {
+			padding: 0 1rem;
+			min-width: 0;
+			max-width: 100%;
+			flex-shrink: 0;
+
+			@media (width < env(--tablet)) {
+				display: flex;
+				justify-content: center;
+				flex-grow: 1;
+			}
+		}
+	}
+
+	.info {
+		display: flex;
+		align-items: center;
+
+		&__icon {
+			margin-right: 24px;
+			height: 27px;
+			flex-shrink: 0;
+			color: #cccccc;
+		}
+
+		&__body {
+			@include reset;
+
+			color: #999999;
+			font-size: 12px;
+			line-height: 1.25;
+		}
+	}
+
+	.btn-default {
+		@include reset;
+
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0 40px;
+		height: 56px;
+		max-width: 100%;
+		color: #ffffff;
+		border-radius: 50px;
+		background-color: #6039aa;
+		cursor: pointer;
+		transition: all 0.15s ease-in-out;
+
+		&:not(:disabled) {
+			&:hover {
+				background-color: darken(#6039aa, 10%);
+			}
+		}
+
+		&:disabled {
+			opacity: 0.65;
+		}
+
+		&__icon {
+			display: none;
+			margin-right: 1rem;
+			flex-shrink: 0;
+			height: 21px;
+			color: inherit;
+
+			@media (width < env(--tablet)) {
+				display: block;
+			}
+		}
+
+		&__label {
+			@include reset;
+
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			text-align: center;
+			color: inherit;
+			font-size: 16px;
+			line-height: 1.25;
+			font-weight: 600;
+			text-transform: uppercase;
+			cursor: inherit;
 		}
 	}
 </style>
