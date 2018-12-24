@@ -521,10 +521,11 @@
 		color: #ffffff;
 		border-radius: 50px;
 		background-color: #6039aa;
-		cursor: pointer;
 		transition: all 0.15s ease-in-out;
 
 		&:not(:disabled) {
+			cursor: pointer;
+
 			&:hover {
 				background-color: darken(#6039aa, 10%);
 			}
