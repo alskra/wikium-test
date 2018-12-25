@@ -63,7 +63,9 @@ const options = {
 	 * @see https://github.com/imagemin/imagemin-svgo
 	 */
 	svgoOptions: {
-		removeViewBox: false
+		plugins: [
+			{removeViewBox: false}
+		]
 	},
 	/**
 	 * GIF compression plugin options

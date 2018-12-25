@@ -189,7 +189,7 @@
 			onCardOwnerInput(evt) {
 				const input = evt.target;
 
-				input.value = input.value.replace(/[^a-zA-Z-]/g, '');
+				input.value = input.value.replace(/[^a-zA-Z- ]/g, '');
 				this.validateCardOwner(input);
 			},
 			// cardExpiry
